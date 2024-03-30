@@ -83,9 +83,9 @@ open class CHIOTPField<Label: POTPLabel>: UITextField, UITextFieldDelegate {
         keyboardType = .numberPad
         borderStyle = .none
 
-        if #available(iOS 12.0, *) {
-            textContentType = .oneTimeCode
-        }
+        // if #available(iOS 12.0, *) {
+        //     textContentType = .oneTimeCode
+        // }
 
         delegate = self
         addTarget(self, action: #selector(textChanged), for: .editingChanged)
