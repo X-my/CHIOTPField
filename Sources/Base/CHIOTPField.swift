@@ -61,10 +61,11 @@ open class CHIOTPField<Label: POTPLabel>: UITextField, UITextFieldDelegate {
 
     private var _textColor: UIColor?
     open override var textColor: UIColor? {
-        didSet {
-            if _textColor == nil {
-                _textColor = oldValue
-            }
+        set {
+            _textColor = newValue
+        }
+        get {
+            _textColor
         }
     }
 
@@ -79,13 +80,13 @@ open class CHIOTPField<Label: POTPLabel>: UITextField, UITextFieldDelegate {
     }
 
     private func setup() {
-        textColor = .clear
+        super.textColor = .clear
         keyboardType = .numberPad
         borderStyle = .none
 
-        // if #available(iOS 12.0, *) {
-        //     textContentType = .oneTimeCode
-        // }
+        if #available(iOS 12.0, *) {
+            textContentType = .oneTimeCode
+        }
 
         delegate = self
         addTarget(self, action: #selector(textChanged), for: .editingChanged)
