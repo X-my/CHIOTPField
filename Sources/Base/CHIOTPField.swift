@@ -29,12 +29,12 @@ import UIKit
 open class CHIOTPField<Label: POTPLabel>: UITextField, UITextFieldDelegate {
 
     @IBInspectable
-    public var numberOfDigits: Int = 4 {
+    open var numberOfDigits: Int = 4 {
         didSet { redraw() }
     }
 
     @IBInspectable
-    public var spacing: Int = 8 {
+    open var spacing: Int = 8 {
         didSet { redraw() }
     }
 
