@@ -96,6 +96,7 @@ open class CHIOTPField<Label: POTPLabel>: UITextField, UITextFieldDelegate {
 
     open override func setNeedsLayout() {
         super.setNeedsLayout()
+        super.textColor = .clear
         stackView.frame = bounds
     }
 
